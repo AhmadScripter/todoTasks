@@ -65,8 +65,6 @@ export class TasksComponent implements OnInit {
     this.applyFilter()
   }
   toggleTodoStatus(index: number, event: Event) {
-    // this.todoService.updateTodoStatus(index, completed);
-    // this.loadTodos();
     const target = event.target as HTMLInputElement;
     const isChecked = target.checked;
     this.todoService.updateTodoStatus(index, isChecked);

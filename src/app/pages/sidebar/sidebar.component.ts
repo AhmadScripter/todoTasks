@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddTaskComponent } from '../add-task/add-task.component';
 import { TodoItem } from '../../models/todo-item';
@@ -11,8 +11,16 @@ import { TodoFilterService } from '../../services/todo-filter.service';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-
+  
   activeFilter: string = 'All';
+
+  @Input() toggleFunction!: () => void;
+
+  callToggleFunction() {
+    if (this.toggleFunction) {
+      this.toggleFunction();
+    }
+  }
 
   constructor(private dialog: MatDialog, private todoFilterService: TodoFilterService){ }
 
@@ -24,12 +32,8 @@ export class SidebarComponent {
   openDialog(): void {
     const dialogRef = this.dialog.open(AddTaskComponent, {
       width: '400px',
-      disableClose: true, // Prevent closing the dialog without clicking the button
-      autoFocus: true,
-      // position: {
-      //   top: '50%',
-      //   left: '50%'
-      // }
+      disableClose: true,
+      autoFocus: true
     });
 
     dialogRef.afterClosed().subscribe((result) => {

@@ -131,7 +131,7 @@ li.active a {
   background-color: #6E48AA;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 790px) {
   .close-icon i {
     display: block;
   }

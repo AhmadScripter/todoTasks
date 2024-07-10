@@ -1,3 +1,4 @@
+
 .app-container {
   min-height: 100vh;
   background: linear-gradient(to left, #6E48AA, #9D50BB);
@@ -14,6 +15,15 @@
   min-height: calc(100vh - 70px);
   margin: 5px;
   position: relative;
+}
+.display-block{
+  display: block;
+  z-index: 999;
+}
+
+app-tasks{
+  margin-left: 280px;
+  width: 850px;
 }
 
 .btn {
@@ -34,12 +44,29 @@ i {
   color: #6E48AA;
   font-size: 20px;
 }
-@media only screen and (max-width: 1000px) {
-  .btn {
-    display: block;
-  }
 
-  app-sidebar {
+@media only screen and (max-width: 1200px){
+  /* .inner-container{
+    width: 1000px;
+  } */
+  app-tasks{
+    width: 670px;
+  }
+}
+@media only screen and (max-width: 790px){
+  /* .inner-container{
+    width: 1000px;
+  } */
+  .btn{
+    display: block;
+    z-index: 999;
+  }
+  app-sidebar{
     display: none;
+  }
+  app-tasks{
+    /* width: 670px; */
+    width: 100%;
+    margin-left: 0;
   }
 }
