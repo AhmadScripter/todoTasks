@@ -22,13 +22,16 @@ export class SidebarComponent {
     }
   }
 
-  constructor(private dialog: MatDialog, private todoFilterService: TodoFilterService){ }
+  constructor(private dialog: MatDialog, private todoFilterService: TodoFilterService, private todoService: TodoServiceService){ }
 
   setFilter(filter: string): void {
     this.todoFilterService.changeFilter(filter);
     this.activeFilter = filter;
+    this.reloadPage();
   }
- 
+  reloadPage(){
+    this.todoService.reloadPage();
+  }
   openDialog(): void {
     const dialogRef = this.dialog.open(AddTaskComponent, {
       width: '400px',

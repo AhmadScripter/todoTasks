@@ -19,6 +19,7 @@ export class TasksComponent implements OnInit {
   constructor(private todoService: TodoServiceService, private todoFilterService: TodoFilterService) { }
   ngOnInit(): void {
     this.loadTodos();
+    this.todoService.getTodo();
     this.todoFilterService.currentFilter.subscribe(filter => {
       this.selectedFilter = filter;
       this.applyFilter();
@@ -75,4 +76,5 @@ export class TasksComponent implements OnInit {
     this.todoService.deleteTodo(index);
     this.loadTodos();
   }
+ 
 }

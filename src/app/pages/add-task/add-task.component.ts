@@ -43,6 +43,7 @@ export class AddTaskComponent {
       this.todoService.addTodo(newTodo)
       this.dialogRef.close(newTodo);
       this.loadTask()
+      this.reloadPage();
     }
   }
   
@@ -50,4 +51,7 @@ export class AddTaskComponent {
     this.todoService.getTodo();
   }
 
+  reloadPage(){
+    this.todoService.reloadPage();
+  }
 }

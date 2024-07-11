@@ -1,4 +1,3 @@
-
 .app-container {
   min-height: 100vh;
   background: linear-gradient(to left, #6E48AA, #9D50BB);
@@ -16,12 +15,13 @@
   margin: 5px;
   position: relative;
 }
-.display-block{
+
+.display-block {
   display: block;
   z-index: 999;
 }
 
-app-tasks{
+app-tasks {
   margin-left: 280px;
   width: 850px;
 }
@@ -45,27 +45,32 @@ i {
   font-size: 20px;
 }
 
-@media only screen and (max-width: 1200px){
-  /* .inner-container{
-    width: 1000px;
-  } */
-  app-tasks{
+@media only screen and (max-width: 1200px) {
+
+  app-tasks {
     width: 670px;
   }
 }
-@media only screen and (max-width: 790px){
+
+@media only screen and (max-width: 790px) {
+
   /* .inner-container{
     width: 1000px;
   } */
-  .btn{
+  .btn {
     display: block;
     z-index: 999;
   }
-  app-sidebar{
+
+  app-sidebar {
     display: none;
   }
-  app-tasks{
-    /* width: 670px; */
+
+  p {
+    display: block;
+  }
+
+  app-tasks {
     width: 100%;
     margin-left: 0;
   }

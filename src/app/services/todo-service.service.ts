@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TodoItem } from '../models/todo-item';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +8,14 @@ import { TodoItem } from '../models/todo-item';
 export class TodoServiceService {
 
   private storageKey = 'todoItems';
-  constructor() { }
 
+  constructor(private location: Location) { }
+
+  reloadPage() {
+    this.location.go(this.location.path());
+    window.location.reload();
+  }
+  
   getTodo(): TodoItem[] {
     const todo = localStorage.getItem(this.storageKey);
     return todo ? JSON.parse(todo) : [];

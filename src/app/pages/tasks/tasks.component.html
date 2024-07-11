@@ -1,8 +1,7 @@
-<!-- input-form.component.html -->
 <div class="container">
     <div class="content">
+    <p class="note">Please move to sidebar to add new Task </p>
         <div class="cards" *ngFor="let todo of filteredTodos; let i = index">
-            <!-- card.component.html -->
             <div class="card flex-row justify-content-between">
                 <div class="left-content">
                     <p class="description">{{todo.description}} </p>
